@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<head>
+<title>***美女寫真***</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+
+
+ onload=function get(){
+
+ alert("aaaa");
+ //URL
+    var url = location.href;
+    
+    //取得問號之後的值
+    var temp = url.split("?");
+
+    //將值再度分開
+    var vars = temp[1].split("&");
+
+    //一一顯示出來
+    for (var i = 0; i < vars.length; i++) {
+     alert(vars[i]);
+    };
+}
+function get1(){
+document.getElementById("aid").style.display="block" ; 
+document.getElementById("bu1id").style.display="block" ;
+document.getElementById("bu2id").style.display="block";
+
+bl=document.getElementById("s2id");
+bl.play(); 
+
+
+}
+
+
+ function bu1fu(){
+document.getElementById("bu1id").style.display="none" ;
+document.getElementById("bu2id").style.display="none";
+document.getElementById("upid").style.display="block" ;
+document.getElementById("itemsid2").style.display="block";
+
+}
+
+
+
+ function bu2fu(){
+open('https://script.google.com/macros/s/AKfycbyZKZaDsAXqffzwkaRRHV3LbOv-FCV4uIRLDHC8OYuJ46hbYWYlNUMf2pjcVSRH4t0/exec ');
+}
+
+ function offfu(){
+document.getElementById("upid").style.display="none" ;
+document.getElementById("bu1id").style.display="block" ;
+document.getElementById("bu2id").style.display="block";
+
+
+
+}
+
+
+
+
+
+</script>
+
+<style type="text/css">
+
+.back{
+position:fixed;
+top:0px;
+ left:-1000px;
+height:1920px;
+}
+
+#itemsid2{
+ position:fixed;
+  top: 750px;
+  left:40px;
+  font-size:50px;
+   color:green;
+border-radius:10px;
+ }
+
+
+ .upcl{
+ position:fixed;
+  top: 750px; 
+  left:650px;
+ // width:200px;
+  background: orangered;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  font-size: 4rem;
+  outline: none;
+border-radius:15px;
+  box-shadow: -12px 12px 0 hsl(10, 100%, 30%);
+ }
+
+ .offcl{
+ position:fixed;
+  top: 880px; 
+  left:650px;
+ // width:200px;
+  background: green;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+border-radius:15px;
+  font-size: 4rem;
+  outline: none;
+  box-shadow: -12px 12px 0 hsl(10, 100%, 30%);
+ }
+
+
+
+.bu1cl{
+ position:fixed;
+  top: 1450px; 
+  left:150px;
+ // width:200px;
+  background: red;
+border-radius:15px;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  font-size: 4rem;
+  outline: none;
+  box-shadow: -12px 12px 0 hsl(10, 100%, 30%);
+}
+
+.bu2cl{
+ position:fixed;
+  top: 1450px; 
+  left:600px;
+ // width:200px;
+  background: blue;
+  border: none;
+border-radius:15px;
+  color: white;
+  padding: 5px 10px;
+  font-size: 4rem;
+  outline: none;
+  box-shadow: -12px 12px 0 hsl(10, 100%, 30%);
+}
+
+
+#nameid {
+ position:fixed;
+  top: 650px; 
+width:400px;
+  left:40px;
+font-size: 60px;
+border-radius:15px;
+  padding: 5px 10px;
+}
+
+#nameinputid{
+ position:fixed;
+  top: 570px; 
+border-radius:15px;
+  padding: 5px 10px;
+background: blue;
+color: yellow;
+  left:40px;
+font-size: 60px;
+}
+
+
+</style>
+</head>
+<body>
+
+<div id="in"  >
+<input type="image" src="miki.jpg" width="1200"  onClick="get1()">
+</div>
+
+
+
+<div  id="aid" style="display:none;">
+<video class="back" autoplay loop muted>
+<source src="a.mp4">
+</video>
+</div>
+
+
+
+
+
+<div id="upid" style="display:none;">
+<form action="#" method="post" name="google">
+<div  id="nameinputid">請輸入名字</div>
+<input type="text" id="nameid" name="發送者"     value="不知名"/>
+<textarea   id="itemsid2" name="最新留言"  rows="5" cols="15" style="display:none;" placeholder="請輸入留言..."></textarea>
+<button onclick="upfu( )"><div class="upcl" >留言送出</button>
+</form>
+<button onclick="offfu( )"><div class="offcl" >取消</button>
+</div>
+
+
+
+
+
+
+<audio id="s2id" src="whites.mp4" loop controls="controls" hidden="true"></audio>
+
+
+
+
+<button id="bu1id" class="bu1cl" style="display:none;" onclick="bu1fu();" >留 言 </button>
+<button id="bu2id" class="bu2cl" style="display:none;" onclick="bu2fu();" >觀看留言</button>
+
+
+</body>
+
+<script type="text/javascript">
+
+  const scriptURL='https://script.google.com/macros/s/AKfycbyZKZaDsAXqffzwkaRRHV3LbOv-FCV4uIRLDHC8OYuJ46hbYWYlNUMf2pjcVSRH4t0/exec'
+
+        const form = document.forms['google']
+          
+          form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(response => alert("留言已送出！！"))
+              .catch(error => console.error('Error!', error.message))
+          })
+function upfu(){
+var Today=new Date();
+time=Today.getFullYear()+ "_" + (Today.getMonth()+1) + "_" + Today.getDate() + "_"+Today.getHours()+"_"+Today.getMinutes();
+
+document.getElementById("bu1id").style.display="block" ;
+document.getElementById("bu2id").style.display="block";
+document.getElementById("upid").style.display="none" ;
+document.getElementById("itemsid2").style.display="none";
+items2=document.getElementById("itemsid2").value;
+document.getElementById("itemsid2").value=" "+time+" "+items2;
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
